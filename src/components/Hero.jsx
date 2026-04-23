@@ -1,8 +1,5 @@
 import { IconShield, IconCheckBadge, IconStar, IconUser } from './Icons.jsx'
-
-// Hero image: sunlit clean home interior from Unsplash.
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80'
+import HERO_IMG from '../assets/photos/hero-kitchen.jpg'
 
 const BADGES = [
   { icon: IconUser, label: 'Police Checked' },

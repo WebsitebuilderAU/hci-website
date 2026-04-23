@@ -1,8 +1,7 @@
 import Reveal from './Reveal.jsx'
 
-// Placeholder portrait — friendly, professional person.
-const RYAN_IMG =
-  'https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&w=800&q=80'
+// Ryan Harris, owner of Harris Cleaning Industry's
+import RYAN_IMG from '../assets/photos/ryan-headshot.jpg'
 
 export default function About() {
   return (

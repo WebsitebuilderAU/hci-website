@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
+import BeforeAfter from './components/BeforeAfter.jsx'
+import Gallery from './components/Gallery.jsx'
 import About from './components/About.jsx'
 import WhyUs from './components/WhyUs.jsx'
 import Testimonials from './components/Testimonials.jsx'
@@ -34,6 +36,8 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <BeforeAfter />
+        <Gallery />
         <WhyUs />
         <About />
         <Testimonials />
