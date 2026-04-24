@@ -14,7 +14,7 @@ export default function BeforeAfter() {
             Before and after — the real difference.
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            A recent end-of-lease job. Even the toughest rooms come up spotless.
+            A recent domestic clean. Even the toughest rooms come up spotless.
           </p>
         </Reveal>
 
