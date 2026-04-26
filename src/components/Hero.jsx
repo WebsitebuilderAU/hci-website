@@ -5,7 +5,7 @@ const BADGES = [
   { icon: IconUser, label: 'Police Checked' },
   { icon: IconShield, label: 'Fully Insured' },
   { icon: IconCheckBadge, label: '100% Satisfaction' },
-  { icon: IconStar, label: '5-Star Rated' },
+  { icon: IconStar, label: 'Highly Rated' },
 ]
 
 export default function Hero() {
