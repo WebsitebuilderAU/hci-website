@@ -1,4 +1,4 @@
-import { IconStar } from './Icons.jsx'
+import { IconStar, IconStarHalf } from './Icons.jsx'
 import Reveal from './Reveal.jsx'
 
 const REVIEWS = [
@@ -25,11 +25,18 @@ const REVIEWS = [
   },
 ]
 
-function Stars() {
+function Stars({ rating = 5 }) {
+  const full = Math.floor(rating)
+  const half = rating - full >= 0.5
+  const empty = 5 - full - (half ? 1 : 0)
   return (
-    <div className="flex gap-0.5 text-amber-400" aria-label="5 out of 5 stars">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <IconStar key={i} className="w-4 h-4" />
+    <div className="flex gap-0.5 text-amber-400" aria-label={`${rating} out of 5 stars`}>
+      {Array.from({ length: full }).map((_, i) => (
+        <IconStar key={`f${i}`} className="w-4 h-4" />
+      ))}
+      {half && <IconStarHalf className="w-4 h-4" />}
+      {Array.from({ length: empty }).map((_, i) => (
+        <IconStar key={`e${i}`} className="w-4 h-4 text-slate-300" />
       ))}
     </div>
   )
@@ -50,9 +57,9 @@ export default function Testimonials() {
           </Reveal>
           <Reveal delay={80}>
             <div className="flex items-center gap-4 bg-slate-50 px-6 py-4 rounded-card border border-slate-200">
-              <Stars />
+              <Stars rating={4.5} />
               <div>
-                <p className="font-black text-2xl leading-none text-navy-900">5.0</p>
+                <p className="font-black text-2xl leading-none text-navy-900">4.5</p>
                 <p className="text-xs text-slate-500 font-semibold">Average rating</p>
               </div>
             </div>

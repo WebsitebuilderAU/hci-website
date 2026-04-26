@@ -1,4 +1,4 @@
-import { IconKey, IconHome, IconBuilding, IconWindow } from './Icons.jsx'
+import { IconKey, IconHome, IconBuilding, IconWindow, IconSpray } from './Icons.jsx'
 import Reveal from './Reveal.jsx'
 
 const SERVICES = [
@@ -22,6 +22,11 @@ const SERVICES = [
     title: 'Window Cleaning',
     body: 'Streak-free, inside and out. Residential and commercial.',
   },
+  {
+    icon: IconSpray,
+    title: 'Pressure Cleaning',
+    body: 'Driveways, paths and exteriors brought back to life.',
+  },
 ]
 
 export default function Services() {
@@ -38,7 +43,7 @@ export default function Services() {
           </p>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
           {SERVICES.map(({ icon: Icon, title, body }, i) => (
             <Reveal key={title} delay={i * 80}>
               <article className="group h-full bg-slate-50 hover:bg-navy-900 transition-colors duration-300 p-7 rounded-card border border-slate-100">
