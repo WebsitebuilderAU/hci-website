@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import Logo from './Logo.jsx'
 import { IconMenu, IconClose } from './Icons.jsx'
 
+// Real cross-page navigation. Each link is a server-served HTML file so
+// search engines crawl every page independently.
 const NAV = [
-  { href: '#services', label: 'Services' },
-  { href: '#about', label: 'About' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/end-of-lease-cleaning-canberra/', label: 'End of Lease' },
+  { href: '/commercial-cleaning-canberra/', label: 'Commercial' },
+  { href: '/domestic-cleaning-canberra/', label: 'Domestic' },
+  { href: '/window-cleaning-canberra/', label: 'Windows' },
 ]
 
 export default function Header() {
@@ -26,11 +28,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#top" className="flex items-center" aria-label="Harris Cleaning Industry's — home">
+        <a href="/" className="flex items-center" aria-label="Harris Cleaning Industry's — home">
           <Logo />
         </a>
 
-        <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <div className="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
           {NAV.map((item) => (
             <a key={item.href} href={item.href} className="hover:text-navy-900 transition-colors">
               {item.label}
@@ -40,7 +42,7 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden sm:inline-flex bg-navy-900 hover:bg-navy-800 text-white font-semibold px-5 py-2.5 rounded-card transition text-sm"
           >
             Get a Free Quote
@@ -72,7 +74,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold px-5 py-3 rounded-card transition text-sm"
             >

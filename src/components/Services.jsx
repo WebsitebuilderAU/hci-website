@@ -1,31 +1,30 @@
-import { IconKey, IconHome, IconBuilding, IconWindow, IconSpray } from './Icons.jsx'
+import { IconKey, IconHome, IconBuilding, IconWindow } from './Icons.jsx'
 import Reveal from './Reveal.jsx'
 
 const SERVICES = [
   {
     icon: IconKey,
-    title: 'End-of-Lease',
-    body: 'Get your bond back. Our clean meets real estate standards.',
-  },
-  {
-    icon: IconHome,
-    title: 'Domestic',
-    body: 'Regular or one-off. Weekly, fortnightly, or when you need us.',
+    title: 'End of Lease Cleaning',
+    body: 'Real-estate-standard bond cleans — get your full deposit back.',
+    href: '/end-of-lease-cleaning-canberra/',
   },
   {
     icon: IconBuilding,
-    title: 'Commercial',
-    body: 'Offices, shops and workspaces — reliable scheduled cleans.',
+    title: 'Commercial Cleaning',
+    body: 'Reliable scheduled cleans for offices, shops and workspaces.',
+    href: '/commercial-cleaning-canberra/',
+  },
+  {
+    icon: IconHome,
+    title: 'Domestic Cleaning',
+    body: 'Weekly, fortnightly or one-off house cleans across Canberra.',
+    href: '/domestic-cleaning-canberra/',
   },
   {
     icon: IconWindow,
     title: 'Window Cleaning',
-    body: 'Streak-free, inside and out. Residential and commercial.',
-  },
-  {
-    icon: IconSpray,
-    title: 'Pressure Cleaning',
-    body: 'Driveways, paths and exteriors brought back to life.',
+    body: 'Streak-free windows inside and out — homes and businesses.',
+    href: '/window-cleaning-canberra/',
   },
 ]
 
@@ -43,20 +42,26 @@ export default function Services() {
           </p>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-          {SERVICES.map(({ icon: Icon, title, body }, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          {SERVICES.map(({ icon: Icon, title, body, href }, i) => (
             <Reveal key={title} delay={i * 80}>
-              <article className="group h-full bg-slate-50 hover:bg-navy-900 transition-colors duration-300 p-7 rounded-card border border-slate-100">
+              <a
+                href={href}
+                className="group h-full bg-slate-50 hover:bg-navy-900 transition-colors duration-300 p-7 rounded-card border border-slate-100 flex flex-col"
+              >
                 <div className="w-12 h-12 rounded-card bg-navy-900 group-hover:bg-teal-500 flex items-center justify-center mb-6 transition-colors duration-300">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-navy-900 group-hover:text-white transition-colors">
                   {title}
                 </h3>
-                <p className="text-sm text-slate-600 group-hover:text-navy-100 leading-relaxed transition-colors">
+                <p className="text-sm text-slate-600 group-hover:text-navy-100 leading-relaxed transition-colors flex-1">
                   {body}
                 </p>
-              </article>
+                <p className="text-xs uppercase tracking-widest font-bold text-teal-600 group-hover:text-teal-400 mt-5 transition-colors">
+                  Learn more →
+                </p>
+              </a>
             </Reveal>
           ))}
         </div>
